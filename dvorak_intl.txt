@@ -38,7 +38,7 @@ xkb_symbols "dvorak-intl" {
  key <AC02> { [ o,		O,		oe,			OE			] };
  key <AC03> { [ e,		E,		schwa,			U025B			] };
  key <AC04> { [ u,		U,		U028C,			U028A			] };
- key <AC05> { [ i,		I,		U026A						] };
+ key <AC05> { [ i,		I,		U026A,			U22EE			] };
  key <AC06> { [ d,		D,		eth,			ETH			] };
  key <AC07> { [ h,		H,		U02B0,			U2103			] };
  key <AC08> { [ t,		T,		thorn,			THORN			] };
