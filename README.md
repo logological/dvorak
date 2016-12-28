@@ -12,7 +12,8 @@ specifically, the X.Org Server).
 The layout features dead keys to make accents, plus various useful
 symbols, including the euro sign.  It is suitable for writing in
 English, German, French, Icelandic, Hungarian, and possibly other
-languages.
+languages.  It also contains most of the International Phonetic
+Alphabet symbols used to write these languages.
 
 
 Installation
