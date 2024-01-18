@@ -53,7 +53,7 @@ xkb_symbols "dvorak-intl" {
  key <AB04> { [ k,		K,		copyright,		registered		] };
  key <AB05> { [ x,		X,		multiply,		division		] };
  key <AB06> { [ b,		B,		enfilledcircbullet				] };
- key <AB07> { [ m,		M,		mu						] };
+ key <AB07> { [ m,		M,		mu,			U2212			] };
  key <AB08> { [ w,		W,		U0251,			U028D			] };
  key <AB09> { [ v,		V,		U0325,			U031A			] };
  key <AB10> { [ z,		Z,		U0292						] };
