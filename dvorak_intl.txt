@@ -1,3 +1,7 @@
+// Dvorak international with dead keys
+// Tristan Miller (psychonaut@nothingisreal.com)
+// https://github.com/logological/dvorak
+
 xkb_symbols "dvorak-intl" {
 
  name[Group1]= "U.S. English - Dvorak international (with dead keys)";
