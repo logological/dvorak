@@ -30,7 +30,12 @@ installation's `us` symbol file.  This is normally located at
 Recent versions of the X.Org Server already provide a keyboard mapping
 named `dvorak-intl` which may clash with this one.  If you have such a
 server installed, make sure to first remove or rename the existing
-`dvorak-intl` section from `us`.
+`dvorak-intl` section from `us`.  For example, using GNU sed:
+
+```
+# sed -i -e '/^\/\/ Dvorak intl\., with dead keys/,/^};/d;$a\\n' \
+  -e '$r dvorak_intl.txt' /usr/share/X11/xkb/symbols/us
+```
 
 
 Usage
