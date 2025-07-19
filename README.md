@@ -24,7 +24,7 @@ installation's `us` symbol file.  This is normally located at
 `/usr/share/X11/xkb/symbols/us`.  For example:
 
 ```
-# sudo cat dvorak_intl.txt >>/usr/share/X11/xkb/symbols/us
+# cat dvorak_intl.txt >>/usr/share/X11/xkb/symbols/us
 ```
 
 Recent versions of the X.Org Server already provide a keyboard mapping
