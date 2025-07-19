@@ -19,9 +19,10 @@ Alphabet symbols used to write these languages.
 Installation
 ------------
 
-Append the contents of the file `dvorak_intl.txt` to your X11
-installation's `us` symbol file.  This is normally located at
-`/usr/share/X11/xkb/symbols/us`.  For example:
+To install the keyboard mapping system-wide, append the contents of
+the file `dvorak_intl.txt` to your X11 installation's `us` symbol
+file.  This is normally located at `/usr/share/X11/xkb/symbols/us`.
+For example:
 
 ```
 # cat dvorak_intl.txt >>/usr/share/X11/xkb/symbols/us
@@ -29,14 +30,20 @@ installation's `us` symbol file.  This is normally located at
 
 Recent versions of the X.Org Server already provide a keyboard mapping
 named `dvorak-intl` which may clash with this one.  If you have such a
-server installed, make sure to first remove or rename the existing
-`dvorak-intl` section from `us`.  For example, using GNU sed:
+server installed, make sure to first rename the mapping in
+`dvorak-intl.txt`, or else remove or rename the existing `dvorak-intl`
+mapping from `/usr/share/X11/xkb/symbols/us`.  For example, using GNU
+sed:
 
 ```
-# sed -i -e '/^\/\/ Dvorak intl\., with dead keys/,/^};/d;$a\\n' \
+# sed -i -e '/^\/\/ Dvorak intl\., with dead keys/,/^};/d' \
   -e '$r dvorak_intl.txt' /usr/share/X11/xkb/symbols/us
 ```
 
+You can alternatively install the keyboard mapping on a per-user basis
+by following the instructions in Peter Hutterer's blog post on
+[user-specific XKB
+configuration](https://who-t.blogspot.com/2020/09/user-specific-xkb-configuration-putting.html).
 
 Usage
 -----
