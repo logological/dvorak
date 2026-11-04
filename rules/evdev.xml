@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
+<xkbConfigRegistry version="1.1">
+  <layoutList>
+    <layout>
+      <configItem>
+        <name>dvorak</name>
+        <shortDescription>us</shortDescription>
+        <description>English (custom)</description>
+      </configItem>
+      <variantList>
+        <variant>
+          <configItem>
+            <name>en_de_fr_hu_is</name>
+            <description>Dvorak English, German, French, Hungarian, and Icelandic (US, with dead keys)</description>
+          </configItem>
+        </variant>
+      </variantList>
+    </layout>
+  </layoutList>
+</xkbConfigRegistry>

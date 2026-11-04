@@ -1,10 +1,15 @@
-// Dvorak international with dead keys
-// Tristan Miller (psychonaut@nothingisreal.com)
+// This is a variant of the us(dvorak-intl) layout (US Dvorak
+// international with dead keys), extended with characters from German,
+// French, Hungarian, and Icelandic, as well as IPA characters and
+// various other symbols.
+//
+// By Tristan Miller <psychonaut@nothingisreal.com>
 // https://github.com/logological/dvorak
 
-xkb_symbols "dvorak-intl" {
+default partial alphanumeric_keys
+xkb_symbols "en_de_fr_hu_is" {
 
- name[Group1]= "U.S. English - Dvorak international (with dead keys)";
+ name[Group1]= "Dvorak English, German, French, Hungarian, and Icelandic (US, with dead keys)";
  include "us(basic)"
 
  key <TLDE> { [ grave,		asciitilde,	dead_grave,		dead_tilde		] };

@@ -1,9 +1,5 @@
-Dvorak international keyboard layout for xkb
-============================================
-
-
-Description
------------
+`dvorak(en_de_fr_hu_is)` keyboard layout
+========================================
 
 This is a Dvorak international keyboard layout for use with PC
 keyboards.  It can be used with the xkb keyboard mapper for the X
@@ -18,50 +14,38 @@ most of the International Phonetic Alphabet symbols used to write
 these languages.
 
 
-Installation on Wayland
------------------------
+Automatic installation on Wayland or X11
+----------------------------------------
 
-To install the keyboard mapping system-wide, append the file `us` to
-the file `symbols/us` in xkbcommon's system configuration directory:
+Invoke `install.sh` with the option `--system-x11` to install for X11
+system-wide, `--system-wayland` to install for Wayland system-wide, or
+`--user-wayland` to install for Wayland for the current user only.
 
-```
-# mkdir -p ${XKB_CONFIG_EXTRA_PATH:-/etc/xkb}/symbols && cat us >> ${XKB_CONFIG_EXTRA_PATH:-/etc/xkb}/symbols
-```
-
-To install the keyboard mapping on a per-user basis, append the file
-`us` to the file `symbols/us` in xkbcommon's user configuration
-directory:
-
-```
-$ mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/xkb/symbols && cat us >> ${XDG_CONFIG_HOME:-$HOME/.config}/xkb/symbols
-```
-
-If your Wayland server already provides a `us` keyboard mapping
-variant named `dvorak-intl`, then this version will take precedence.
+The script requires the usual POSIX tools as well as the
+[XMLStarlet](https://github.com/xmlstarlet/xmlstarlet) toolkit.
+Running the script through `sudo` may be necessary for system-wide
+installation.
 
 
-Installation on X11
--------------------
+Manual installation on Wayland
+------------------------------
 
-To install the keyboard mapping system-wide, append the contents of
-the file `us` to your X11 installation's `us` symbol file.  This is
-normally located at `/usr/share/X11/xkb/symbols/us`.  For example:
+Copy the files `symbols/dvorak` and `rules/evdev.xml` to the
+corresponding subdirectories of xkbcommon's system configuration
+directory (typically `$XKB_CONFIG_EXTRA_PATH` or `/etc/xkb`) or of
+xkbcommon's user configuration directory (typically
+`$XDG_CONFIG_HOME/xkb` or `$HOME/.config/xkb`).  If the files already
+exist in the destination directories, you will need to merge in the
+relevant parts of the source files.
 
-```
-# cat us >>/usr/share/X11/xkb/symbols/us
-```
 
-Recent versions of the X.Org Server already provide a `us` keyboard
-mapping variant named `dvorak-intl` that may clash with this one.  If
-you have such a server installed, make sure to first rename the
-variant in this repository's `us` file, or else remove or rename the
-existing `dvorak-intl` variant from `/usr/share/X11/xkb/symbols/us`.
-For example, using GNU sed:
+Manual installation on X11
+--------------------------
 
-```
-# sed -i -e '/^\/\/ Dvorak intl\., with dead keys/,/^};/d' \
-  -e '$r us' /usr/share/X11/xkb/symbols/us
-```
+To install system-wide, copy the file `symbols/dvorak` to
+`/usr/share/X11/xkb/symbols/dvorak`.  If the destination file already
+exists, you will need to merge in the relevant parts of the source
+file.
 
 You can alternatively install the keyboard mapping on a per-user basis
 by following the instructions in Peter Hutterer's blog post on
@@ -73,15 +57,15 @@ Usage
 -----
 
 If you are using a desktop environment such as KDE or GNOME, you can
-select the `dvorak-intl` layout using the keyboard settings of the
-control panel.  (If you have only just installed the new layout, you
-may need to restart your session first.)
+select the `dvorak(en_de_fr_hu_is)` layout using the keyboard settings
+of the control panel.  (If you have only just installed the new
+layout, you may need to restart your session first.)
 
 Alternatively, if you are running X11, you can run the following from
 a terminal emulator:
 
 ```
-$ setxkbmap us dvorak-intl
+$ setxkbmap dvorak en_de_fr_hu_is
 ```
 
 
